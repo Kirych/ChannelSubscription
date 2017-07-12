@@ -1,0 +1,21 @@
+{
+    "name": "kirych/ChannelSubscription",
+    "description": "Subscribe user to some channels",
+    "authors": [
+        {
+            "name": "Kirych",
+            "email": "kirych@gmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "src/controllers",
+            "src/migrations",
+            "src/models",
+            "src/seeds",
+            "src/traits",
+        ],
+    },    
+    "minimum-stability": "dev",
+    "require": {}
+}

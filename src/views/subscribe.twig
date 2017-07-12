@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+
+<h1>Подпишись на каналы</h1>
+<h2>Привет, {{ user.name }}</h2>
+
+{% if(success) %}
+<h3 style="color:green">{{ success }}</h3>
+{% elseif(error) %}
+<h3 style="color:red">{{ error }}</h3>
+{% endif %}
+
+<form action="{{ action }}" method="post">
+
+<input type="hidden" name="_token" value="{{ token }}">
+
+{% for channel in channels %}
+
+<label>
+	<input type="checkbox" name="id_channel[]" value={{ channel.id_channel }}
+		{% if channel.id_channel in subscribed %}
+		checked="checked"
+		{% endif %}
+	>&nbsp;{{ channel.id_channel }}
+</label>
+<br>
+{% endfor %}
+<br>
+<button>Подписаться</button>
+</form>
+</body>
+</html>
